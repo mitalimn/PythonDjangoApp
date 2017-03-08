@@ -6,6 +6,25 @@
         <title>Howdy!</title>
     </head>
     <body>
-        <h1>Howdy! I am Learning Django!</h1>
+        {% block content %}
+            <h1>New Snippet</h1>
+            <form method="POST" class="post-form">{% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="save btn btn-default">Save</button>
+            </form>
+            <div>
+            {% if snippet%}
+                <div>
+                    {%for snippet in Snippet%}
+                        {{snippet.title}}
+                        {{snippet.language}}
+                        {{snippet.code_snippet}}
+                        {{snippet.description}}
+                    {% endfor %}
+                </div>
+            {% endif %}
+            </div>
+            
+        {% endblock %}
     </body>
 </html>
