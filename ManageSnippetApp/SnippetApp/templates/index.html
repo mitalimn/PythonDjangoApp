@@ -13,18 +13,27 @@
                 <button type="submit" class="save btn btn-default">Save</button>
             </form>
             <div>
-            {% if snippet%}
-                <div>
-                    {%for snippet in Snippet%}
+            
+            {% if snippets%}
+            <h2>Code Snippets</h2>
+                <!--<div>-->
+                    <!--{%for snippet in snippets%}
                         {{snippet.title}}
                         {{snippet.language}}
                         {{snippet.code_snippet}}
                         {{snippet.description}}
-                    {% endfor %}
-                </div>
+                    {% endfor %}-->
+
+                    <!--{% for snippet in snippets %}-->
+                    <!--<div>-->
+                        <!--<p>Title: {{ snippet.title }}</p>-->
+                        <!--<p>language {{snippet.language}}</p>-->
+                        <!--<p>{{ post.text|linebreaksbr }}</p>-->
+                    <!--</div>-->
+                    <!--{% endfor %}                   -->
+                <!--</div>-->
             {% endif %}
-            </div>
-            
+            </div>         
         {% endblock %}
     </body>
 </html>
